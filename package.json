@@ -1,0 +1,26 @@
+{
+  "name": "svelte-custom-components",
+  "svelte": "src/index.js",
+  "module": "public/bundle.js",
+  "files": [
+    "src",
+    "src/components",
+    "public"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c --watch"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^6.0.0",
+    "rollup": "^1.20.0",
+    "rollup-plugin-livereload": "^1.2.0",
+    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-svelte": "^5.0.0",
+    "svelte": "^3.0.0",
+    "svelte-preprocess": "^3.7.1"
+  },
+  "keywords": [
+    "svelte"
+  ]
+}
