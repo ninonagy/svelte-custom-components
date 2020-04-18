@@ -6,29 +6,28 @@
 
 <body>
 
-    <image-container options="app.imageOptions"></image-container>
+    <image-container width="app.width" url="app.url" methods="app.methods"></image-container>
 
     <script>
         var { connect, ImageContainer } = components;
 
         var app = {
-            imageOptions: {
-                width: 500,
-                url: 'https://picsum.photos/500',
+            width: 500,
+            url: 'https://picsum.photos/500',
+            methods: {
                 makeSmaller: function () {
-                    app.imageOptions.width -= 10;
+                    app.width -= 10;
                 },
                 makeLarger: function () {
-                    app.imageOptions.width += 10;
-                },
-                changeImage: function() {
-                    app.imageOptions.url = 'https://picsum.photos/500';
+                    app.width += 10;
                 }
             }
         };
 
         connect('image-container', ImageContainer, {
-            options: Object,
+            width: Number,
+            url: String,
+            methods: Object
         });
     </script>
 

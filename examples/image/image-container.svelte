@@ -1,21 +1,20 @@
 <script>
-  export let options;
-
-//   const width = options.imageWidth;
-//   const handleMinus = options.handleMinus;
-//   const handlePlus = options.handlePlus;
-
-  //   export let imageWidth = 500;
-  //   export let handleMinus;
-  //   export let handlePlus;
+  export let width;
+  export let url;
+  export let methods;
 </script>
 
-<div>
-  <img
-    src={options.url}
-    alt=""
-    width={options.width} />
-  <button on:click={options.handleMinus}>-</button>
-  <button on:click={options.changeImage}>Change</button>
-  <button on:click={options.handlePlus}>+</button>
+<style>
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 540px;
+  }
+</style>
+
+<div class="container">
+  <button on:click={methods.makeSmaller}>-</button>
+  <button on:click={methods.makeLarger}>+</button>
+  <p></p>
+  <img src={url} alt="" {width} />
 </div>
