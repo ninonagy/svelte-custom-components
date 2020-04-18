@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <script src="../examples-bundle.js"></script>
+</head>
+
+<body>
+
+    <custom-input value="app.searchText"></custom-input>
+    <text-renderer message="app.searchText"></text-renderer>
+
+    <script>
+        var { connect, CustomInput, TextRenderer } = components;
+
+        var app = {
+            searchText: 'Text',
+        };
+
+        connect('custom-input', CustomInput, {
+            value: String
+        });
+
+        connect('text-renderer', TextRenderer, {
+            message: String
+        });
+    </script>
+
+</body>
+
+</html>

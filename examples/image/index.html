@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <script src="../examples-bundle.js"></script>
+</head>
+
+<body>
+
+    <image-container options="app.imageOptions"></image-container>
+
+    <script>
+        var { connect, ImageContainer } = components;
+
+        var app = {
+            imageOptions: {
+                width: 500,
+                url: 'https://picsum.photos/500',
+                makeSmaller: function () {
+                    app.imageOptions.width -= 10;
+                },
+                makeLarger: function () {
+                    app.imageOptions.width += 10;
+                },
+                changeImage: function() {
+                    app.imageOptions.url = 'https://picsum.photos/500';
+                }
+            }
+        };
+
+        connect('image-container', ImageContainer, {
+            options: Object,
+        });
+    </script>
+
+</body>
+
+</html>

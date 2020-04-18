@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <script src="../examples-bundle.js"></script>
+</head>
+
+<body>
+
+    <alert-box>
+        Something bad happened.
+    </alert-box>
+
+    <script>
+        var { connect, AlertBox } = components;
+
+        connect('alert-box', AlertBox, {});
+    </script>
+
+</body>
+
+</html>

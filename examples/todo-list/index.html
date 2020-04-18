@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <script src="../examples-bundle.js"></script>
+</head>
+
+<body>
+
+    <app-todos todos="app.todos"></app-todos>
+
+    <script>
+        var { connect, Todos } = components;
+
+        var app = {
+            todos: [
+                { id: 0, text: 'Vegetables' },
+                { id: 1, text: 'Cheese' },
+                { id: 2, text: 'Whatever else humans are supposed to eat' }
+            ]
+        };
+
+        connect('app-todos', Todos, {
+            todos: Array
+        });
+    </script>
+
+</body>
+
+</html>

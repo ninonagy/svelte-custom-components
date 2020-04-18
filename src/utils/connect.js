@@ -61,7 +61,7 @@ export default function connect(name, Component, properties = []) {
                     if (boundObject) {
                         this.bindings[name] = boundObject;
                         val = boundObject.value[boundObject.property];
-                        if (val.constructor != type) throw TypeError(`${type.name} expected, ${val.constructor.name} is not the specified type for '${boundObject.path.join('.')}'`);
+                        if (val.constructor != type) throw TypeError(`${val.constructor.name} expected, ${type.name} is not the right type for '${boundObject.path.join('.')}'`);
                     } else if (type == String) {
                         val = value;
                     } else if (type == Number) {
@@ -223,7 +223,8 @@ export default function connect(name, Component, properties = []) {
                     this.component.$$.update = function() {
                         for (var name in _this.bindings) {
                             const index = comp.$$.props[name];
-                            _this.bindings[name].value = comp.$$.ctx[index];
+                            let binding = _this.bindings[name];
+                            binding.value[binding.property] = comp.$$.ctx[index];
                         }
                         update.apply(null, arguments);
                     };

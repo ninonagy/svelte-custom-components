@@ -6,3 +6,5 @@ connect("svelte-component", Component, {
     name: String,
     onEvent: Function
 });
+
+// Connect as many components as you want
